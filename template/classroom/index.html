@@ -1,0 +1,74 @@
+{% extends 'classroom/base.html' %}
+{% load static %}
+{% block content %}
+
+{% if messages %}
+<div class="alert alert-primary alert-dismissible fade show" role="alert">
+  {% for message in messages %}
+    <div class="alert {% if message.tags %} alert-{{ message.tags }}{% endif %}">{{ message|safe }}</div>
+  {% endfor %}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{% endif %}
+
+<div class="banner">
+      <img src="{% static 'images/fidit.PNG' %}" alt="">
+      <div class="content">
+        <h1>FIDIT ProHelper</h1>
+        <p>Aplikacija za profesore i studente</p>
+      </div>
+    </div>
+
+    <div class="use-content">
+      <h1>Usluge</h1>
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <div class="box">
+            <div class="imgBx">
+              <img src="{% static 'images/teacher.PNG' %}" alt="">
+            </div>
+            <div class="content">
+              <h3>Za profesore</h3>
+              <ol>
+                <li>Profesori mogu dodati studente u svoj kolegij preko Dodaj Studenta opcije.</li>
+                <li>Nakon dodavanja studenta, profesor može davati i uređivati ocjene studenta.</li>
+                <li>Profesori mogu također pisati obavijesti koje će se poslati svim studentima na kolegiju.</li>
+                <li>Profesori mogu postavljati zadatke preko Postavi Zadatak opcije</li>
+                <li>Profesor može pregledati rješenja koja student preda te ih ocijeniti.</li>
+                <li>Profesor može dodati svoju sliku korisničkog profila.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="box">
+            <div class="imgBx">
+              <img src="{% static 'images/homeimg.PNG' %}" alt="">
+            </div>
+            <div class="content">
+              <h3>Za studenta</h3>
+              <ol>
+                <li>Studenti se mogu login-ati te vidjeti sve aktivnosti u kolegiju.</li>
+                <li>Studenti mogu vidjeti sve obavijesti koje je profesor postavio preko Obavijesti opcije.</li>
+                <li>Studenti mogu preuzeti i upload-ati zadatak preko Zadatak opcije (ako se zadatak upload-a ne može se kasnije promijeniti)</li>
+                <li>Student može vidjeti svoje ocjene pod Ocjene opcijom.</li>
+                <li>Student može dodati svoju sliku korisničkog profila.</li>
+              </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div class="social">
+      <h3>Spojite se s nama na društvenim medijima.</h3>
+      <a class="social-icon" href="#"><i class="fab fa-facebook-f"></i></a>
+      <a class="social-icon" href="#"><i class="fab fa-twitter"></i></a>
+      <a class="social-icon" href="#"><i class="fab fa-instagram"></i></a>
+      <a class="social-icon" href="#"><i class="fab fa-google"></i></a>
+      <a class="social-icon" href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+
+{% endblock %}

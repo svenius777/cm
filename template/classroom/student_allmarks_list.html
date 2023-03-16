@@ -1,0 +1,35 @@
+{% extends "classroom/base.html" %}
+{% block content %}
+
+<div class="container">
+<div class="jumbotron">
+  {% if student.marks.count == 0  %}
+  <h2>Joše nema ocjena!</h2>
+  {% else %}
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Sr. no.</th>
+        <th scope="col">Kolegij</th>
+        <th scope="col">Ime Profesora</th>
+        <th scope="col">Dobiveno Bodova</th>
+        <th scope="col">Maksimalno Bodova</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for object in student.marks.all %}
+      <tr>
+        <th scope="row">{{ forloop.counter }}</th>
+        <th>{{ object.subject_name }}</th>
+        <th>{{ object.teacher.name }}</th>
+        <th>{{ object.marks_obtained }}</th>
+        <th>{{ object.maximum_marks }}</th>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
+</div>
+</div>
+
+{% endblock %}
